@@ -17,7 +17,7 @@ public class MediatorTest {
     public void givenCommandShouldNotThrowAndReturnNull() {
 
         assertThatNoException().isThrownBy(() -> {
-            Object result = underTest.execute(new Command());
+            Object result = underTest.handle(new Command());
             assertThat(result).isNull();
         });
     }
@@ -26,7 +26,7 @@ public class MediatorTest {
     public void givenQueryShouldNotThrowAndReturnString() {
 
         assertThatNoException().isThrownBy(() -> {
-            Object result = underTest.execute(new Query());
+            Object result = underTest.handle(new Query());
             assertThat(result).isEqualTo(QUERY_HANDLED_RESULT);
         });
     }
@@ -34,7 +34,7 @@ public class MediatorTest {
     @Test
     public void givenUnManagedActionShouldThrowNoHandlerForActionException() {
 
-        assertThatThrownBy(() -> underTest.execute(new UnManagedAction()))
+        assertThatThrownBy(() -> underTest.handle(new UnManagedAction()))
                 .isExactlyInstanceOf(NoHandlerForActionException.class)
                 .hasMessage("No handler for action UnManagedAction");
     }

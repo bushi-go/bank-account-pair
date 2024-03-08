@@ -10,4 +10,5 @@ plugins {
 
 dependencies {
     api(project(":domain:contract"))
+
 }

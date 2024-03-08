@@ -6,6 +6,7 @@
 
 plugins {
     id("com.it.example.java-spring-library-conventions")
+
 }
 
 dependencies {

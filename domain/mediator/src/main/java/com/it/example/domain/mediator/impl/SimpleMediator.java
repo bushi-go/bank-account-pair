@@ -21,7 +21,7 @@ public class SimpleMediator implements Mediator {
 
     @Override
     @SuppressWarnings("unchecked")
-    public <R, T extends Action> R execute(T action) {
+    public <R, T extends Action> R handle(T action) {
         Handler<T,R> handler = handlers.stream()
                 .filter(handlerCandidate -> handlerCandidate.canHandle(action))
                 .findFirst()

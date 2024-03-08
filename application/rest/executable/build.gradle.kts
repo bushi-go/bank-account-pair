@@ -10,6 +10,7 @@ plugins {
 
 dependencies {
 
+    implementation(project(":application:rest:contract"))
     // Internal modules dependencies
     implementation(project(":domain:core"))
 
@@ -18,6 +19,8 @@ dependencies {
     implementation(project(":infrastructure:persistence"))
     implementation(project(":infrastructure:events"))
     implementation(project(":infrastructure:clients"))
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
+    implementation("org.springframework.boot:spring-boot-starter-web:3.2.1")
 
     // External dependencies
 }

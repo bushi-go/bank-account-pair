@@ -15,11 +15,11 @@ public class ExamplePrimaryAdapter implements ExamplePort {
 
     @Override
     public void exampleWrite(ExampleCommand command) {
-        mediator.execute(command);
+        mediator.handle(command);
     }
 
     @Override
     public ExampleDto exampleRead(ExampleQuery query) {
-        return mediator.execute(query);
+        return mediator.handle(query);
     }
 }
